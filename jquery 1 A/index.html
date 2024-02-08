@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Example</title>
+  <!-- Include jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // jQuery code starts here
+    $(document).ready(function() {
+      // Attach click event handler to the button
+      $('#button1').click(function() {
+        // Select all radio buttons that don't have the name attribute set to 'color'
+        $('input[type="radio"]:not([name="color"])').each(function() {
+          // For each selected radio button, find the adjacent <span> element and append text to it
+          $(this).next('span').append(' (Extra Color)');
+        });
+      });
+    });
+  </script>
+</head>
+<body style="background-color: burlywood; font-weight: bold;">
+  <!-- HTML content -->
+  <div style="display: flex; justify-content: center; align-items: center; padding: 30px;">
+  <div style="width: 500px;background: mistyrose;  border: 1px solid #000;padding: 50px;">
+  <div style="padding-bottom: 20px;">
+    <input type="radio" name="color" value="Red">
+    <span style="color: red;">Red</span>
+  </div>
+  <div style="padding-bottom: 20px;">
+    <input type="radio" value="Cold Fusion">
+    <span style="color: skyblue;">Sky</span>
+  </div>
+  <div style="padding-bottom: 20px;">
+    <input type="radio" name="accept" value="Evil Plans">
+    <span style="color: seagreen;">Sea</span>
+  </div>
+</div>
+</div>
+<div style="display: flex; justify-content: center;align-items: center;">
+    <button id="button1" style="display: flex; justify-content: center;">Click to see the effect</button>
+</div>
+
+</body>
+</html>
